@@ -171,7 +171,7 @@
         "tableId": "h6R9RZ-1EzSSNwIphXCFr",
         "name": "phone_no",
         "comment": "",
-        "dataType": "INTEGER",
+        "dataType": "VARCHAR",
         "default": "",
         "options": 8,
         "ui": {
@@ -182,7 +182,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1745017013332,
+          "updateAt": 1745017970077,
           "createAt": 1745016981742
         }
       },
@@ -273,7 +273,7 @@
         "comment": "",
         "dataType": "VARCHAR",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 61,
@@ -282,7 +282,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1745017131095,
+          "updateAt": 1745017947862,
           "createAt": 1745017116868
         }
       },
@@ -291,7 +291,7 @@
         "tableId": "5_oXDP4sJRkBQ4RnyS9kf",
         "name": "book_cost",
         "comment": "",
-        "dataType": "FLOAT",
+        "dataType": "INTEGER",
         "default": "",
         "options": 0,
         "ui": {
@@ -302,7 +302,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1745017191045,
+          "updateAt": 1745017953884,
           "createAt": 1745017132276
         }
       }
@@ -396,7 +396,7 @@
       {
         "options(primaryKey)": 1745016996044,
         "name": 1745017005037,
-        "dataType": 1745017010204,
+        "dataType": 1745017970074,
         "options(notNull)": 1745017013332
       }
     ],
@@ -453,7 +453,8 @@
       -1,
       {
         "name": 1745017126333,
-        "dataType": 1745017131092
+        "dataType": 1745017131092,
+        "options(notNull)": 1745017947858
       }
     ],
     "Vcx1wfm4nRECiTVUoBDkQ": [
@@ -462,7 +463,7 @@
       -1,
       {
         "name": 1745017138175,
-        "dataType": 1745017191044
+        "dataType": 1745017953882
       }
     ]
   }
