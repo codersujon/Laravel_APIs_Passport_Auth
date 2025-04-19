@@ -29,9 +29,9 @@ class AuthorController extends Controller
     }
 
      /**
-     * Logout API (GET)
+     * Logout API (POST)
      */
-    public function logout(){
+    public function logout(Request $request){
 
     }
 }
