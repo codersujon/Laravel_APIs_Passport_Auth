@@ -91,3 +91,115 @@ http://localhost:8000/api/
   "status": true,
   "message": "Author Logout!"
 }
+```
+
+### 📘 5. Add Book
+
+- **URL:** `/api/books/add-book`  
+- **Method:** `POST`
+- **Body (JSON):**
+
+```json
+{
+   "title": "নফসের বিরুদ্ধে জিহাদ",
+   "description": "A practical guide to Laravel development.",
+   "book_cost": 150
+}
+```
+
+- **Response:**
+```json
+{
+ "status": true,
+    "message": "Book Created Successfully!",
+    "date": {
+        "author_id": 1,
+        "title": "নফসের বিরুদ্ধে জিহাদ",
+        "description": "A practical guide to Laravel development.",
+        "book_cost": "150",
+        "id": 5
+    }
+}
+```
+
+### 📘 6. List All Books
+
+- **URL:** ` /api/books/list-book`  
+- **Method:** `GET`
+- **Success Response**
+
+```json
+{
+    "status": true,
+    "message": "Books found",
+    "data": [
+        {
+            "id": 1,
+            "author_id": 1,
+            "title": "নফসের বিরুদ্ধে লড়াই",
+            "description": null,
+            "book_cost": null
+        },
+        {
+            "id": 5,
+            "author_id": 1,
+            "title": "জিহাদ",
+            "description": "sample",
+            "book_cost": 150
+        }
+    ]
+}
+```
+
+### 📘 7. Delete Book
+
+- **URL:** `/api/books/delete-book/{id}`  
+- **Method:** `GET`
+- **Success Response**
+
+```json
+{
+  "status": true,
+  "message": "Book deleted!"
+}
+```
+
+### 🗂 Folder Structure Overview
+```markdown
+  app/
+  └── Http/
+      └── Controllers/
+          └── Api/
+              ├── AuthorController.php
+              └── BookController.php
+  routes/
+  └── api.php
+```
+
+### ⚙️ Built With
+- **Laravel 12+**
+- **PHP 8.2+**
+- **MySQL**
+- **Postman (for testing)**
+
+## 🌐 API Docs
+
+🔗 [View Full API Documentation](http://localhost:8000/docs)
+
+### 👨‍💻 Developed By
+
+<p align="left">
+  <a href="https://github.com/codersujon/" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/codersujon/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:csesujon155@email.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>
+
+<p>
+  Developed with ❤️ by <strong>MD SUJAN AHMED</strong>
+</p>
