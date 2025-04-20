@@ -51,7 +51,7 @@ http://localhost:8000/api/
   "password": "securePassword123"
 }
 ```
-- **Success Response:**
+- **Response:**
 ```json
 {
   "status": true,
@@ -59,3 +59,35 @@ http://localhost:8000/api/
   "access_token": "BearerTokenHere"
 }
 ```
+
+### 📝 3. View Profile (Protected)
+
+- **URL:** `/api/author/profile`  
+- **Method:** `GET`
+
+- **Response:**
+```json
+{
+  "status": true,
+    "message": "Profile Data!",
+    "data": {
+        "id": 2,
+        "name": "Rahim",
+        "email": "rahim@gmail.com",
+        "phone_no": "01680366446",
+        "password": "$2y$12$bk1L3eBt4coVUTbxu6rW4eOfCKnyfDXcwu95znLCi.JH9Y4onMA.y"
+    }
+}
+```
+
+### 📝 4. Logout (Protected)
+
+- **URL:** `/api/author/logout`  
+- **Method:** `GET`
+
+- **Response:**
+```json
+{
+  "status": true,
+  "message": "Author Logout!"
+}
