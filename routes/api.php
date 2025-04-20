@@ -30,6 +30,6 @@ Route::prefix('author')->controller(AuthorController::class)->group(function(){
 Route::prefix('books')->middleware('auth:api')->controller(BookController::class)->group(function(){
     Route::post('add-book', 'saveBook'); // POST /books
     Route::get('list-book', 'listBooks'); // GET /books
-    Route::get('delete-book/{id}', 'deleteBook'); // DELETE /books/{id}
+    Route::delete('delete-book/{id}', 'deleteBook'); // DELETE /books/{id}
 });
 

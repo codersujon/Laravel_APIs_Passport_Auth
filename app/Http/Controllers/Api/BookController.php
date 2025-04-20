@@ -61,6 +61,27 @@ class BookController extends Controller
      * Delete Book API (DELETE)
      */
     public function deleteBook($bookId){
+        $author_id = auth()->user()->id;
+        
+        if(Book::where(["id" =>$bookId, "author_id" => $author_id])->exists()){
+            
+            $book = Book::where([
+                "id" =>$bookId, 
+                "author_id" => $author_id
+            ])->first();
 
+            $book->delete();
+            
+            return response()->json([
+                "status" => true,
+                "message" => "Book deleted!"
+            ]);
+
+        };
+
+        return response()->json([
+            "status" => false,
+            "message" => "Book not found"
+        ]);
     }
 }
