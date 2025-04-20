@@ -19,4 +19,8 @@ class Author extends Authenticatable
         'phone_no',
         'password',
     ];
+
+    public function books(){
+        return $this->hasMany(Book::class);
+    }
 }

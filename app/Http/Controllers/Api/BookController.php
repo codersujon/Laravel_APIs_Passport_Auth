@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Author;
 
 class BookController extends Controller
 {
@@ -32,14 +33,28 @@ class BookController extends Controller
             "message" => "Book Created Successfully!",
             "date" => $book
         ]);
-
     }
 
     /**
      * List Book API (GET)
      */
     public function listBooks(){
+        $author_id = auth()->user()->id;
 
+        $books = Author::find($author_id)->books;
+
+        if(!empty($books)){
+            return response()->json([
+                "status" => true,
+                "message" => "Books found",
+                "data" => $books
+            ]);
+        }
+
+        return response()->json([
+            "status" => false,
+            "message" => "No book found"
+        ]);
     }
 
     /**
