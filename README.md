@@ -16,7 +16,7 @@ http://localhost:8000/api/
 
 ## 📚 API Endpoints
 
-### 📝 1. Register Author
+### 👤 1. Register Author
 
 - **URL:** `/api/author/register`  
 - **Method:** `POST`
@@ -36,5 +36,26 @@ http://localhost:8000/api/
 {
   "status": true,
   "message": "Author created successfully!",
+}
+```
+
+### 📝 2. Login Author
+
+- **URL:** `/api/author/login`  
+- **Method:** `POST`
+- **Body (JSON):**
+
+```json
+{
+  "email": "john@example.com",
+  "password": "securePassword123"
+}
+```
+- **Success Response:**
+```json
+{
+  "status": true,
+  "message": "Login successful!",
+  "access_token": "BearerTokenHere"
 }
 ```
