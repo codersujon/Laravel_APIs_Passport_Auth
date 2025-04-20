@@ -72,7 +72,12 @@ class AuthorController extends Controller
      * Profile API (GET)
      */
     public function profile(){
-
+        $user = auth()->user();
+        return response()->json([
+            "status" => true,
+             "message" => "Profile Data!",
+             "data" => $user
+        ]);
     }
 
      /**
