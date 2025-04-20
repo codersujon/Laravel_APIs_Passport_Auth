@@ -18,7 +18,7 @@ Route::prefix('author')->controller(AuthorController::class)->group(function(){
     // Protected Routes
     Route::middleware(["auth:api"])->group(function(){
         Route::get('profile', 'profile');
-        Route::post('logout', 'logout'); // POST is better for logout
+        Route::get('logout', 'logout'); // POST is better for logout
     });
 
 });

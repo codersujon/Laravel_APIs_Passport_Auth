@@ -75,15 +75,20 @@ class AuthorController extends Controller
         $user = auth()->user();
         return response()->json([
             "status" => true,
-             "message" => "Profile Data!",
-             "data" => $user
+            "message" => "Profile Data!",
+            "data" => $user
         ]);
     }
 
      /**
-     * Logout API (POST)
+     * Logout API (GET)
      */
-    public function logout(Request $request){
+    public function logout(){
+        auth()->user()->token()->revoke();
 
+        return response()->json([
+            "status" => true,
+            "message" => "Author Logout!",
+        ]);
     }
 }
