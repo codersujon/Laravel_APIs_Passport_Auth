@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('author_id');
             $table->string('title', 120);
-            $table->string('description');
+            $table->text('description');
             $table->integer('book_cost')->nullable();
         });
     }
