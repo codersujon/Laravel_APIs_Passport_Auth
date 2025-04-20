@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Author;
 
@@ -26,7 +27,7 @@ class AuthorController extends Controller
             "name" =>$request->name,
             "email" =>$request->email,
             "phone_no" =>$request->phone_no,
-            "password" =>Hash::make($request->password),
+            "password" => Hash::make($request->password),
         ]);
 
         // Response
@@ -40,7 +41,31 @@ class AuthorController extends Controller
      * Login API (POST, formdata)
      */
     public function login(Request $request){
+        // Validation
+        $validated = $request->validate([
+            "email" => "required|email",
+            "password" => "required",
+        ]);
 
+        // Auth Facade
+        if(Auth::attempt([
+            "email" => $request->email,
+            "password" => $request->password,
+        ])){
+            $user = Auth::user();
+            $token = $user->createToken('MyApp')->accessToken;
+
+            return response()->json([
+                "status" => true,
+                "message" => "Login successful!",
+                "access_token" => $token
+            ]);
+        }
+
+        return response()->json([
+            "status" => true,
+            "message" => "Invalid credentials"
+        ]);
     }
 
     /**

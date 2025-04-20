@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\AuthorController;
+use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 /**
  * AUTHOR API ROUTES
@@ -31,3 +32,4 @@ Route::prefix('books')->middleware('auth:api')->controller(BookController::class
     Route::get('list-book', 'listBooks'); // GET /books
     Route::get('delete-book/{id}', 'deleteBook'); // DELETE /books/{id}
 });
+

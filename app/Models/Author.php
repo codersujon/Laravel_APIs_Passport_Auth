@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 
-class Author extends Model 
+class Author extends Authenticatable 
 {
     use HasFactory, HasApiTokens, Notifiable;
 
